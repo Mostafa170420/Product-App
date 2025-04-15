@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
           actions: [
             const Icon(Iconsax.search_normal),
             const SizedBox(
-              width: 25,
+              width: 30,
             ),
             IconButton(
               icon: const Icon(Icons.shopping_bag_outlined),
