@@ -5,8 +5,8 @@ import 'package:product_app/model/cart.dart';
 import 'package:product_app/model/product.dart';
 
 class CategoryItem extends StatelessWidget {
-  CategoryItem({super.key, required this.product});
-  Product product;
+  const CategoryItem({super.key, required this.product});
+  final Product product;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

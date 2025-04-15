@@ -5,9 +5,9 @@ import 'package:product_app/view/home/widget/item.dart';
 import 'package:product_app/view/home/widget/see_all.dart';
 
 class Section extends StatelessWidget {
-  Section({super.key, required this.products, required this.title});
-  List<Product> products;
-  String title;
+  const Section({super.key, required this.products, required this.title});
+  final List<Product> products;
+  final String title;
 
   @override
   Widget build(BuildContext context) {

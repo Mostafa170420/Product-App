@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +11,6 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => ProductCubit()..getAllProducts(),
@@ -73,7 +71,12 @@ class Category extends StatelessWidget {
                 ),
               );
             } else {
-              return const SizedBox();
+              return Center(
+                child: Text(
+                  "failed",
+                  style: darkTheme.textTheme.displaySmall,
+                ),
+              );
             }
           },
         ),

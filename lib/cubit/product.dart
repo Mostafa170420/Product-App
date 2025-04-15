@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:product_app/cubit/cart_states.dart';
 import 'package:product_app/cubit/product_states.dart';
 import 'package:product_app/model/product.dart';
 
@@ -31,7 +30,9 @@ class ProductCubit extends Cubit<ProductStates> {
           manProducts: manProducts,
           womenProducts: womenProducts,
           electronics: electronics));
-    } on DioException catch (e) {}
+    } on DioException {
+      emit(ProductfailedState());
+    }
   }
 
   void getAllProducts({bool paginat = false}) async {
@@ -47,7 +48,9 @@ class ProductCubit extends Cubit<ProductStates> {
       allProducts.addAll(productsData.products);
       paginationNum += 20;
       emit(ProductSuccessCategoryState(products: allProducts));
-    } on DioException catch (e) {}
+    } on DioException {
+      emit(ProductfailedState());
+    }
   }
 
   void getGenderProducts(String category) async {
@@ -67,7 +70,9 @@ class ProductCubit extends Cubit<ProductStates> {
       ProductsData productsData = ProductsData(map: response.data);
       allProducts = productsData.products;
       emit(ProductSuccessCategoryState(products: allProducts));
-    } on DioException catch (e) {}
+    } on DioException {
+      emit(ProductfailedState());
+    }
   }
 
   void getElectronicsProducts() async {
@@ -85,6 +90,8 @@ class ProductCubit extends Cubit<ProductStates> {
         allProducts.addAll(productsData.products);
       }
       emit(ProductSuccessCategoryState(products: allProducts));
-    } on DioException catch (e) {}
+    } on DioException {
+      emit(ProductfailedState());
+    }
   }
 }

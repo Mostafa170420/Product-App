@@ -1,7 +1,5 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:product_app/cubit/cart.dart';
 import 'package:product_app/cubit/cart_states.dart';
@@ -15,8 +13,6 @@ class CartScraen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => CartCubit()..getData(),
       child: Scaffold(

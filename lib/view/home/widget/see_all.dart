@@ -6,12 +6,11 @@ import 'package:product_app/dark_theme.dart';
 import 'package:product_app/view/category/widget/category_item.dart';
 
 class SeeAll extends StatelessWidget {
-  SeeAll({super.key, required this.title});
-  String title;
+  const SeeAll({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => ProductCubit()..getGenderProducts(title),
@@ -54,7 +53,12 @@ class SeeAll extends StatelessWidget {
                 ),
               );
             } else {
-              return const SizedBox();
+              return Center(
+                child: Text(
+                  "failed",
+                  style: darkTheme.textTheme.displaySmall,
+                ),
+              );
             }
           },
         ),

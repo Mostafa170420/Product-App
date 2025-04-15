@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:product_app/dark_theme.dart';
-import 'package:product_app/view/cart/cart.dart';
 import 'package:product_app/view/category/category.dart';
 
 class TopImage extends StatelessWidget {
@@ -50,7 +49,7 @@ class TopImage extends StatelessWidget {
                   style: darkTheme.textTheme.labelSmall,
                 ),
                 const Spacer(),
-                ShopNowButton(width, context),
+                shopNowButton(width, context),
               ],
             )),
       ]),
@@ -58,7 +57,7 @@ class TopImage extends StatelessWidget {
   }
 }
 
-Widget ShopNowButton(double width, context) => SizedBox(
+Widget shopNowButton(double width, context) => SizedBox(
       height: 34,
       width: 130,
       child: ElevatedButton(

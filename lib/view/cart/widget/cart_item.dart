@@ -6,9 +6,9 @@ import 'package:product_app/model/cart.dart';
 import 'package:product_app/model/cart_item.dart';
 
 class ItemCart extends StatelessWidget {
-  ItemCart({super.key, required this.cartItem, required this.cartCubit});
-  CartItem cartItem;
-  CartCubit cartCubit;
+  const ItemCart({super.key, required this.cartItem, required this.cartCubit});
+  final CartItem cartItem;
+  final CartCubit cartCubit;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -20,11 +20,9 @@ class ItemCart extends StatelessWidget {
         children: [
           Expanded(
             flex: 3,
-            child: Container(
-              child: CachedNetworkImage(
-                imageUrl: cartItem.images[0],
-                fit: BoxFit.fitHeight,
-              ),
+            child: CachedNetworkImage(
+              imageUrl: cartItem.images[0],
+              fit: BoxFit.fitHeight,
             ),
           ),
           Expanded(

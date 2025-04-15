@@ -1,27 +1,22 @@
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iconly/iconly.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:product_app/cubit/bottom_nav_bar.dart';
-import 'package:product_app/dark_theme.dart';
 import 'package:product_app/view/cart/cart.dart';
-import 'package:product_app/view/home/widget/clothes_section.dart';
 import 'package:product_app/view/home/widget/main_screan.dart';
-import 'package:product_app/view/home/widget/top_image.dart';
+import 'package:product_app/view/profile.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
-  List screan = [
+  final List screan = [
     const MainScrean(),
     Container(),
     Container(),
-    Container(),
+    const Profile(),
   ];
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => BottomNavBarCubit(),
       child: Scaffold(

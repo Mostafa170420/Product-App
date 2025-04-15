@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:product_app/cubit/product.dart';
 import 'package:product_app/cubit/product_states.dart';
+import 'package:product_app/dark_theme.dart';
 import 'package:product_app/view/home/widget/clothes_section.dart';
 import 'package:product_app/view/home/widget/top_image.dart';
 
@@ -54,7 +55,12 @@ class MainScrean extends StatelessWidget {
               ),
             ));
           } else {
-            return Container();
+            return Center(
+              child: Text(
+                "failed",
+                style: darkTheme.textTheme.displaySmall,
+              ),
+            );
           }
         },
       ),

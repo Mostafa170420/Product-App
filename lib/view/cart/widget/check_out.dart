@@ -4,20 +4,19 @@ import 'package:product_app/dark_theme.dart';
 import 'package:product_app/model/cart.dart';
 
 class CheckOut extends StatelessWidget {
-  CheckOut(
+  const CheckOut(
       {super.key,
       required this.subTotal,
       required this.discount,
       required this.totalPrice,
       required this.cartCubit});
-  double subTotal;
-  double discount;
-  double totalPrice;
-  CartCubit cartCubit;
+  final double subTotal;
+  final double discount;
+  final double totalPrice;
+  final CartCubit cartCubit;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
         height: height / 4,
